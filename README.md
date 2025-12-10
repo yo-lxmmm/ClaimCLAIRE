@@ -136,6 +136,10 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 No installation or API keys needed - just visit the link and start verifying claims!
 
+<p align="center">
+  <img src="images/ClaimCLAIRE demo.png" alt="ClaimCLAIRE live demo" width="70%">
+</p>
+
 ### Option 1: Web Interface (Local)
 Run the Flask web application locally for an interactive interface:
 
