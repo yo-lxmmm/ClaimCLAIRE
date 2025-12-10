@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Analysis - CLAIRE Fact Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>📅 Fact Evolution Timeline</h1>
+            <p class="subtitle">Discover when facts changed over time</p>
+            <nav class="breadcrumb">
+                <a href="/">Home</a> → <a href="/single">Single Claim</a> → <span>Timeline</span>
+            </nav>
+        </header>
+
+        <!-- Input Form -->
+        <section class="timeline-form-section">
+            <div class="form-card">
+                <label for="timeline_claim">Claim to analyze:</label>
+                <textarea
+                    id="timeline_claim"
+                    placeholder="Enter a claim to see how its verification changed over time...&#10;&#10;Example: &quot;COVID-19 vaccines prevent transmission&quot;"
+                    rows="4"
+                ></textarea>
+
+                <div class="time-range-controls">
+                    <label>Time Range:</label>
+                    <div class="date-selectors">
+                        <div class="date-input">
+                            <label for="start_date">From:</label>
+                            <input type="date" id="start_date" class="date-picker" />
+                        </div>
+                        <span class="date-separator">→</span>
+                        <div class="date-input">
+                            <label for="end_date">To:</label>
+                            <input type="date" id="end_date" class="date-picker" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>How it works:</strong> The system uses AI to discover key timeline events from web searches, then verifies the claim at each event date to show how the verdict evolved over time.</p>
+                    <p id="cost_estimate">Estimated: 4-6 events analyzed, ~2-5 minutes, with narrative explanations</p>
+                </div>
+
+                <button id="analyzeTimelineBtn" class="btn-primary" onclick="analyzeTimeline()">
+                    Analyze Timeline
+                </button>
+            </div>
+        </section>
+
+        <!-- Loading State with Activity Log -->
+        <div id="timeline_loading" class="loading-container" style="display: none;">
+            <div class="spinner"></div>
+            <div id="progress_text" class="progress-text">Discovering timeline events...</div>
+
+            <!-- Activity Feed -->
+            <div class="activity-feed">
+                <div class="activity-header">Current Activity</div>
+                <div id="timeline_activity_messages" class="activity-messages">
+                    <!-- Messages appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results (Vertical Timeline) -->
+        <div id="timeline_result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/timeline.js') }}"></script>
+</body>
+</html>

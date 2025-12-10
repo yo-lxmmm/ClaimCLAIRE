@@ -1,0 +1,7 @@
+# Ignore dataset files (users download these themselves)
+*.json
+*.jsonl
+*.csv
+
+# EXCEPT the sample file (include this for quick testing)
+!sample_dev.json

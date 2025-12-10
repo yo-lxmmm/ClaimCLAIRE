@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Claim Analysis - ClaimCLAIRE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>ClaimCLAIRE</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="/single" class="nav-link active">Single</a>
+                <a href="/timeline" class="nav-link">📅 Timeline</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Analysis Section -->
+            <section class="analysis-section">
+                <div class="section-header">
+                    <h2>Single Claim Analysis</h2>
+                    <p>Enter a claim to verify its accuracy using AI-powered fact-checking</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="form-group">
+                        <label for="claim_input">Claim to Verify</label>
+                        <textarea 
+                            id="claim_input" 
+                            class="textarea-input" 
+                            placeholder="Enter the claim you want to fact-check..."
+                            rows="4"
+                        >climate change is a hoax</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="before_date">Optional: Filter by Publication Date</label>
+                        <div class="date-input-wrapper">
+                            <input 
+                                id="before_date" 
+                                type="text" 
+                                class="date-input" 
+                                placeholder="YYYY-MM-DD (e.g., 2021-01-31)"
+                            />
+                            <span class="input-hint">Only use sources published on or before this date</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary btn-large" onclick="analyzeSingle()" id="analyzeBtn">
+                        <span class="btn-text">Analyze Claim</span>
+                        <span class="btn-loader" id="analyzeLoader" style="display: none;"></span>
+                    </button>
+                    
+                    <div id="single_loading" class="loading-state" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing claim and gathering evidence...</p>
+                    </div>
+
+                    <!-- Progress Timeline -->
+                    <div id="progress_container" class="progress-container" style="display: none;">
+                        <!-- Horizontal Stage Bar -->
+                        <div class="stages-bar">
+                            <div class="stage-item" data-stage="1">
+                                <div class="stage-badge">1</div>
+                                <div class="stage-label">Claim Decomposition</div>
+                            </div>
+                            <div class="stage-arrow">→</div>
+
+                            <div class="stage-item" data-stage="2">
+                                <div class="stage-badge">2</div>
+                                <div class="stage-label">Evidence Gathering</div>
+                            </div>
+                            <div class="stage-arrow">→</div>
+
+                            <div class="stage-item" data-stage="3">
+                                <div class="stage-badge">3</div>
+                                <div class="stage-label">Component Evaluation</div>
+                            </div>
+                            <div class="stage-arrow">→</div>
+
+                            <div class="stage-item" data-stage="4">
+                                <div class="stage-badge">4</div>
+                                <div class="stage-label">Verdict Synthesis</div>
+                            </div>
+                            <div class="stage-arrow">→</div>
+
+                            <div class="stage-item" data-stage="5">
+                                <div class="stage-badge">5</div>
+                                <div class="stage-label">Final Report</div>
+                            </div>
+                        </div>
+
+                        <!-- Activity Feed -->
+                        <div class="activity-feed">
+                            <div class="activity-header">Current Activity</div>
+                            <div id="activity_messages" class="activity-messages">
+                                <!-- Messages appear here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="single_result" class="result-container"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+

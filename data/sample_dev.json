@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "claim": "In a letter to Steve Jobs, Sean Connery refused to appear in an apple commercial.",
+    "label": "Refuted",
+    "claim_date": "31-10-2020"
+  },
+  {
+    "id": 1,
+    "claim": "Trump Administration claimed songwriter Billie Eilish Is Destroying Our Country In Leaked Documents",
+    "label": "Refuted",
+    "claim_date": "31-10-2020"
+  },
+  {
+    "id": 2,
+    "claim": "Due to Imran Khan's criticism of Macron's comments on Islam, French authorities cancelled the visas of 183 Pakistani citizens and deported 118 from the country.",
+    "label": "Refuted",
+    "claim_date": "31-10-2020"
+  },
+  {
+    "id": 3,
+    "claim": "UNESCO declared Nadar community as the most ancient race in the world.",
+    "label": "Refuted",
+    "claim_date": "31-10-2020"
+  },
+  {
+    "id": 4,
+    "claim": "Republican Matt Gaetz was part of a company that had to pay 75 million in hospice fraud. They stole from dying people.",
+    "label": "Refuted",
+    "claim_date": "31-10-2020"
+  }
+]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Analysis - ClaimCLAIRE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>ClaimCLAIRE</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="/single" class="nav-link">Single</a>
+                <a href="/batch" class="nav-link active">Batch</a>
+                <a href="/timeline" class="nav-link">📅 Timeline</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="section-header">
+                    <h2>Batch Analysis</h2>
+                    <p>Upload a JSON file with multiple claims to analyze them in bulk</p>
+                </div>
+                
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h3>Upload Claims File</h3>
+                        <p>Drag and drop your JSON file here, or click to browse</p>
+                        <p class="file-format">Format: [{"claim": "your claim", "passage": "context"}]</p>
+                    </div>
+                    <input type="file" id="fileInput" accept=".json" style="display: none;">
+                    <button class="btn-primary" onclick="document.getElementById('fileInput').click()" id="uploadBtn">
+                        Select File
+                    </button>
+                    <div id="fileInfo" class="file-info" style="display: none;"></div>
+                    <div id="upload_loading" class="loading-state" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Processing claims...</p>
+                    </div>
+                    <div id="results" class="results-container"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+

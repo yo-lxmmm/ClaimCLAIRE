@@ -1,0 +1,88 @@
+# ============================================
+# DEPLOYMENT EXCLUSIONS - Analysis & Evaluation
+# ============================================
+
+# Reference and original code (NOT NEEDED FOR DEPLOYMENT)
+reference_only/
+inconsistency-detection-original/
+
+# Tests and evaluation scripts (NOT NEEDED FOR DEPLOYMENT)
+tests/
+scripts/
+conftest.py
+pytest.ini
+
+# Evaluation results and outputs (NOT NEEDED FOR DEPLOYMENT)
+*.csv
+baseline_evaluation_results.csv
+baseline_stratified_evaluation_results.csv
+tavily_stratified_evaluation_results.csv
+tavily_stratified_metrics.json
+output/
+uploads/
+
+# Unused agent components (NOT NEEDED FOR DEPLOYMENT)
+claire_agent/claim_understanding/
+claire_agent/ui_ux_designer/
+
+# ============================================
+# BUILD ARTIFACTS AND CACHES
+# ============================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.pixi/
+
+# ============================================
+# DEVELOPMENT CONFIGURATION
+# ============================================
+# Virtual environments
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Logs and temporary files
+*.log
+debug_logs.log
+
+# Git
+.git/
+.gitignore
+
+# Node modules (if any)
+node_modules/
+
+# Local development config (NOT NEEDED FOR DEPLOYMENT)
+pixi.lock
+pixi.toml
+ruff.toml
+
+# Binary libraries (system-specific, not needed)
+*.dylib
+*.dll
+*.a
+*.lib
+
+# ============================================
+# DOCUMENTATION (keep only README)
+# ============================================
+*.md
+!README.md
+
+# ============================================
+# DATA FILES (exclude evaluation datasets)
+# ============================================
+*.json
+!sample_claims.json

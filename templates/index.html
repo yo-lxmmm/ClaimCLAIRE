@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaimCLAIRE - Fact Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>ClaimCLAIRE</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="/single" class="nav-link">Single</a>
+                <a href="/timeline" class="nav-link">📅 Timeline</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Verify Facts with AI-Powered Analysis</h1>
+                        <p class="hero-description">
+                            ClaimCLAIRE uses advanced AI to fact-check claims, analyze source reliability, 
+                            and provide transparent explanations for every verdict. Get instant, trustworthy fact-checking results.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="hero-actions">
+                            <a href="/single" class="btn-primary">Analyze Single Claim</a>
+                            <a href="/timeline" class="btn-outline">📅 Timeline Analysis</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-card">
+                            <div class="card-header">
+                                <div class="card-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="fact-check-icon">✓</div>
+                                <p>AI-Powered Fact Verification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>Enter Your Claim</h4>
+                        <p>Paste the claim you want to verify or explore how it evolved over time</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>AI Analysis</h4>
+                        <p>Our AI searches the web, evaluates source reliability, and analyzes evidence</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>Get Results</h4>
+                        <p>Receive a verdict with detailed explanations, sources, and reliability ratings</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
+
